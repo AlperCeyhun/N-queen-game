@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex items-center justify-center flex-col">
       <DisplayBoard board={board}/>
-      <TestDisplayBoard board={getQueenRange({ board: CreateEmptyBoard(boardSize), row: 2, col: 2})} />
+      <TestDisplayBoard board={getQueenRange({ board: CreateEmptyBoard(boardSize), row: 2, col: 2})}/>
     </div>
   );
 }
