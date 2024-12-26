@@ -1,26 +1,23 @@
-interface CreateRandomBoardProps {
-    boardSize: number;
-}
-
 function createRandomBoard(boardSize: number): boolean[][] {
-    const board: boolean[][] = Array.from({ length: boardSize }, () => Array(boardSize).fill(false));
-  
-    let count = 0;
-  
-    for (let i = 0; i < board.length; i++) {
-      for (let j = 0; j < board[i].length; j++) {
-        if (Math.random() > 0.6) {
-          board[i][j] = true;
-          count++;
-        }
+  const board: boolean[][] = Array.from({ length: boardSize }, () => Array(boardSize).fill(false));
 
-        if (count >= boardSize) {
-          return board;
-        }
-      }
-    }
-    return board;
+  const totalCells = boardSize * boardSize;
+  const queenCount = boardSize;
+  const positions = Array.from({ length: totalCells }, (_, index) => index);
+
+  for (let i = positions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [positions[i], positions[j]] = [positions[j], positions[i]];
+  }
+
+  for (let k = 0; k < queenCount; k++) {
+    const position = positions[k];
+    const row = Math.floor(position / boardSize);
+    const col = position % boardSize;
+    board[row][col] = true;
+  }
+
+  return board;
 }
-  
-  export default createRandomBoard;
-  
+
+export default createRandomBoard;
