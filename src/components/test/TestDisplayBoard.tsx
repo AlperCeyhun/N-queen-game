@@ -1,24 +1,25 @@
-"use client";
-import React, { useState } from "react";
+"use client"; 
+import React from "react";
 
-interface DisplayBoardProps {
+interface TestDisplayBoardProps {
   board: boolean[][];
 }
 
-const DisplayBoard: React.FC<DisplayBoardProps> = ({ board }) => {
+const TestDisplayBoard: React.FC<TestDisplayBoardProps> = ({ board }) => {
   return (
     <div className="board">
       {board.map((row, rowIndex) => (
-        <div key={rowIndex} className="row">
+        <div key={rowIndex} className="flex">
           {row.map((cell, cellIndex) => (
-            <span key={cellIndex} className="cell text-white">
-              {cell ? "Q" : "M"}
-            </span>
-          ))}
+            <span
+              key={cellIndex}
+              className="w-4 h-4 flex items-center justify-center text-white font-mono">
+              {cell ? "Q" : "N"}
+            </span>))}
         </div>
       ))}
     </div>
   );
 };
 
-export default DisplayBoard;
+export default TestDisplayBoard;
