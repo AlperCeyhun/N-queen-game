@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+
 const Queen: React.FC = () => {
 
   const [isHovered, setIsHovered] = useState(false);
@@ -12,9 +14,8 @@ const Queen: React.FC = () => {
     <div className="flex justify-center items-center h-full z-10"
     onMouseEnter={() => handleHover(true)}
     onMouseLeave={() => handleHover(false)}>
-      <span className="text-5xl text-black font-bold hover:">♕</span>
+      <span className="text-5xl text-black font-bold">♕</span>
     </div>
   );
 };
-
 export default Queen;
