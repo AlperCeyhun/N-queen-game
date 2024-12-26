@@ -12,7 +12,7 @@ const DisplayBoard: React.FC<DisplayBoardProps> = ({ board }) => {
 
   return (
     <div
-      className="grid mt-12 z-5"
+      className="grid relative mt-12 z-5"
       style={{
         gridTemplateColumns: `repeat(${boardLength}, 1fr)`,
         gridTemplateRows: `repeat(${boardLength}, 1fr)`,
@@ -24,7 +24,7 @@ const DisplayBoard: React.FC<DisplayBoardProps> = ({ board }) => {
             key={`${rowIndex}-${colIndex}`}
             tileColor={
               (rowIndex + colIndex) % 2 === 0 ? "bg-greenTile" : "bg-whiteTile"}>  
-            {hasQueen && <Queen />}
+            {hasQueen && <Queen row={rowIndex} col={colIndex} board={board}/>}
           </Tile>)))}
     </div>
   );
