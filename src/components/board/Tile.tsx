@@ -9,9 +9,8 @@ interface TileProps{
 const Tile: React.FC<TileProps> = ({tileColor,children}) => {
 
     return (
-        <div className={`
-        ${tileColor ? tileColor : "bg-black"}
-        h-16 w-16 z-5`}>
+        <div className={`h-16 w-16 z-5
+        ${tileColor ? tileColor : "bg-black"}`}>
             {children}
         </div>
     );
