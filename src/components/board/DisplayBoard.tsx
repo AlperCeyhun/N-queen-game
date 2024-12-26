@@ -12,7 +12,7 @@ const DisplayBoard: React.FC<DisplayBoardProps> = ({ board }) => {
 
   return (
     <div
-      className="grid mt-12"
+      className="grid mt-12 z-5"
       style={{
         gridTemplateColumns: `repeat(${boardLength}, 1fr)`,
         gridTemplateRows: `repeat(${boardLength}, 1fr)`,
