@@ -21,7 +21,7 @@ const DisplayRange: React.FC<DisplayRangeProps> = ({ board }) => {
         row.map((hasRange, colIndex) => (
           <Tile
             key={`${rowIndex}-${colIndex}`}
-            tileColor={hasRange ? "bg-black opacity-50" : "bg-whiteTile opacity-0"}/>)))}
+            tileColor={hasRange ? "bg-black opacity-60" : "bg-whiteTile opacity-0"}/>)))}
     </div>
     );
 };
