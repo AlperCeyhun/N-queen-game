@@ -11,8 +11,8 @@ const BoardSizeButton: React.FC<BoardSizeButtonProps> = ({children,handleClick,n
 
     return (
         <div>
-            <button className="mt-6 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600
-            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"type="button" onClick={handleClick}>
+            <button className="mt-6 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#292929] hover:bg-[#333333]
+            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3C3C3C]"type="button" onClick={handleClick}>
                 {children && children}
                 {name && name}
             </button>
