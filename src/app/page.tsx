@@ -18,13 +18,17 @@ export default function Home() {
     setBoard(createRandomBoard(boardSize));
   }, [boardSize]);
 
-  const getHillClimb = () =>{
+  const getHillClimb = () => {
     setBoard(getBestNeighbor(board));
     setLastUsedAlgorithm("Hill Climb");
   }
+  
+  const resetboard = () => {
+    setBoard(createRandomBoard(boardSize));
+  }
   return (
     <div className="flex relative items-center justify-center flex-col">
-      <ButtonContainer boardSize={boardSize} setBoardSize={setBoardSize} setLastUsedAlgorithm={setLastUsedAlgorithm}/>
+      <ButtonContainer boardSize={boardSize} setBoardSize={setBoardSize} setLastUsedAlgorithm={setLastUsedAlgorithm} handleReset={resetboard}/>
       <BoardButton name="Apply Hill Climb" handleClick={getHillClimb}/>
       <DisplayBoard board={board}/>
       <AlgorithmInfoContainer board={board} algorithmName={lastUsedAlgorithm}/>
