@@ -3,7 +3,7 @@ import Image from "next/image";
 import minus from "@/assets/icons/minus.png";
 import plus from "@/assets/icons/plus.png";
 import { useState } from "react";
-import MessageBox from "./MessageBox"; // Import MessageBox
+import MessageBox from "./MessageBox";
 
 interface ButtonContainerProps {
   board: boolean[][];
@@ -39,6 +39,7 @@ export default function ButtonContainer({ boardSize, setBoardSize, setLastUsedAl
     if (savedBoard.length === 0) {
       setShowMessage("No saved board found.");
     } else {
+      setBoardSize(savedBoard.length);
       setBoard(savedBoard);
       setShowMessage("Board imported successfully!");
     }
