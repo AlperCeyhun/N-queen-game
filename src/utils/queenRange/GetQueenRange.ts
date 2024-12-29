@@ -15,7 +15,7 @@ interface GetQueenRangeProps {
 
 function getQueenRange({ board, row, col }: GetQueenRangeProps): boolean[][] {
     
-    let resultBoard = board.map((r) => r.map(() => false));
+    const resultBoard = board.map((r) => r.map(() => false));
 
     const directions = [
         getQueenRangeNXNY({ board, row, col }), // Left and Down
