@@ -1,5 +1,5 @@
 
-import getBestNeighbor from "@/algorithms/hillclimb/getBestNeighbor";
+import getHillClimbNeighbor from "@/algorithms/hillclimb/getHillClimbNeighbor";
 import getAnnealingNeighbor from "@/algorithms/simulatedannealing/getAnnealingNeighbor";
 import BoardButton from "@/components/ui/BoardButton";
 import { Dispatch, SetStateAction } from "react";
@@ -12,7 +12,7 @@ interface AlgorithmButtonContainerProps {
 
 export default function AlgorithmButtonContainer({board, setBoard, setLastUsedAlgorithm}: AlgorithmButtonContainerProps) {
     const getHillClimb = () => {
-        setBoard(getBestNeighbor(board));
+        setBoard(getHillClimbNeighbor(board));
         setLastUsedAlgorithm("Hill Climb");
     }
     const getSimulatedAnnealing = () => {
