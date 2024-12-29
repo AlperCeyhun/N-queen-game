@@ -6,7 +6,6 @@ import BoardButtonContainer from "@/components/ui/ButtonContainer";
 import AlgorithmInfoContainer from "@/components/ui/AlgorithmInfoContainer";
 import AlgorithmButtonContainer from "@/components/ui/AlgorithmButtonContainer";
 
-
 export default function Home() {
   
   const [boardSize, setBoardSize] = useState(4);
@@ -23,7 +22,7 @@ export default function Home() {
 
   return (
     <div className="flex relative items-center justify-center flex-col">
-      <BoardButtonContainer boardSize={boardSize} setBoardSize={setBoardSize} setLastUsedAlgorithm={setLastUsedAlgorithm} handleReset={resetboard}/>
+      <BoardButtonContainer boardSize={boardSize} setBoardSize={setBoardSize} setLastUsedAlgorithm={setLastUsedAlgorithm} handleReset={resetboard} board={board} setBoard={setBoard}/>
       <AlgorithmButtonContainer board={board} setBoard={setBoard} setLastUsedAlgorithm={setLastUsedAlgorithm}/>
       <DisplayBoard board={board}/>
       <AlgorithmInfoContainer board={board} algorithmName={lastUsedAlgorithm}/>
